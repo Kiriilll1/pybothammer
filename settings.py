@@ -1,0 +1,1 @@
+HOST = "https://eraseborderbot-production-35f3.up.railway.app"
