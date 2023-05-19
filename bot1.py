@@ -46,7 +46,7 @@ async def send_data(chatID: int):
 async def MyProfile(message:types.Message,state:FSMContext):
 	print(message.chat.id)
 	button=types.KeyboardButton(text="Мой профиль👤")
-	buttonKurs=types.KeyboardButton(text="Курсы📚")
+	buttonKurs=types.KeyboardButton(text="Тесты📚")
 	# buttonFeed=types.KeyboardButton(text="Обратная связь📞")
 	keyboardProfile=types.ReplyKeyboardMarkup(row_width=1,resize_keyboard=True)
 	keyboardProfile.add(button,buttonKurs)
@@ -83,9 +83,9 @@ async def sendfeedback(message:types.Message,state:FSMContext):
 	#await Form.MyProfile.set()
 	
 
-@dp.message_handler(text=['Курсы📚'],state=None)
+@dp.message_handler(text=['Тесты📚'],state=None)
 async def Kurs(message:types.Message):
-	await message.answer("Курсы",
+	await message.answer("Тесты",
     reply_markup=InlineKeyboardMarkup().add(InlineKeyboardButton(text="Тесты",web_app=WebAppInfo(url=f"https://idyllic-valkyrie-eedcf6.netlify.app/{message.chat.id}"))))
 
 
